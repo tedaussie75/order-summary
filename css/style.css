@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;900&display=swap');
+:root {
+  --white-basic: #fff;
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+  --hover: #766cf1;
+  --box-shadow-main: #cad4f8;
+  --max-width-default: 450px;
+  --max-width-desktop: 1440px;
+  --family-font-default: "system-ui", sans-serif;
+  --light-weight-font: 500;
+  --medium-weight-font: 700;
+  --bold-weight-font: 900;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-family: var(--family-font-default);
+}
+
+.page {
+    background-image: url("../images/pattern-background-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 100vh;
+    max-width: var(--max-width-desktop);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--pale-blue);
+}
+
+.order-card {
+    max-width: var(--max-width-default);
+    border-radius: 20px;
+    background-color: var(--white-basic);
+    box-shadow: 0px 25px 25px -3px var(--box-shadow-main);
+    width: 90%;
+}
+
+.order-card img {
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+
+.order-card h1,
+.order-card p {
+    text-align: center;
+}
+
+.order-card h1 {
+    font-weight: var(--bold-weight-font);
+    font-size: 3rem;
+    font-weight: var(--medium-weight-font);
+    color: var(--dark-blue);
+}
+
+.card-content > p {
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 1.7rem;
+    font-weight: var(--light-weight-font);
+    color: var(--desaturated-blue);
+    line-height: 1.6;
+}
+
+.card-content {
+    padding: 40px;
+}
+
+.subscription-section button,
+.payment-btn,
+.cancel-btn {
+    border: none;
+    cursor: pointer;
+}
+
+.subscription-section {
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    margin-top: 20px;
+    background: var(--very-pale-blue);
+    border-radius: 10px;
+}
+
+.subscription-section img {
+    width: 45px;
+}
+
+.subscription-section button{
+    text-decoration: underline;
+    margin-left: auto;
+    color: var(--hover);
+    font-weight: var(--bold-weight-font);
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 1.4rem;
+    transition: .2s all ease;
+}
+
+.subscription-section button:hover {
+    color: var(--hover);
+    text-decoration: none;
+}
+
+.plan-infos h2 {
+    color: var(--dark-blue);
+    font-size: 1.7rem;
+}
+
+.plan-infos p {
+    color: var(--desaturated-blue);
+    margin-top: 5px;
+    font-size: 1.7rem;
+    font-family: var(--family-font-default);
+}
+
+.plan-infos {
+    margin-left: 20px;
+}
+
+.plan-infos,
+.payment-btn-section {
+    display: flex; 
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.payment-btn {
+    margin-top: 30px;
+    background-color: var(--bright-blue);
+    width: 100%;
+    padding: 15px 0;
+    border-radius: 10px;
+    color: var(--white-basic);
+    font-size: 1.6rem;
+    font-weight: var(--medium-weight-font);
+    transition: .2s all ease;
+    box-shadow: 0px 8px 40px -13px var(--bright-blue);
+}
+
+.payment-btn:hover {
+    background-color: var(--hover);
+    box-shadow: 0px 10px 43px -10px var(--hover);
+}
+
+.cancel-btn {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: var(--desaturated-blue);
+    font-weight: var(--medium-weight-font);
+    background-color: transparent;
+    transition: .5s color ease;
+}
+
+.cancel-btn:hover {
+    color: var(--dark-blue);
+}
+
+@media screen and (max-width: 280px) {
+    .subscription-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px 10px !important;
+    }
+    .plan-infos,
+    .subscription-section button {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .page {
+        background-image: url("../images/pattern-background-mobile.svg");
+    }
+
+    .order-card {
+        margin: 20px;
+    }
+
+    .card-content {
+        padding: 30px;
+    }
+
+    .subscription-section {
+        padding: 25px 10px;
+    }
+}
